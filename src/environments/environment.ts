@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'https://www.thesportsdb.com/api/v1/json/1',
   production: false
 };
 

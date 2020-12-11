@@ -1,0 +1,32 @@
+.sports-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 50px;
+
+  .sport-container {
+    width: 30%;
+    margin-bottom: 20px;
+
+    .sport-image {
+      height: 200px;
+      background-size: cover;
+    }
+
+    .sport-title {
+      display: flex;
+      background-color: #FFF;
+      padding: 15px;
+      text-decoration: none;
+      color: #000;
+      align-items: center;
+
+      .sport-icon {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+      }
+    }
+  }
+}
