@@ -1,0 +1,50 @@
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex-center-container {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 15px;
+}
+
+.no-data-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 100px;
+}
+
+.event-venue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.league-event-container {
+  background-color: #FFF;
+}
+
+.country-container {
+  background-color: #FFF;
+}
+
+.league-logo img {
+  width: 300px;
+}
+
+.mat-icon {
+  margin-right: 10px;
+}

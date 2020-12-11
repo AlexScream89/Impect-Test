@@ -1,16 +1,16 @@
 <div class="sports-list">
-  <div *ngFor="let sport of (sports$ | async)" class="sport-container">
+  <a *ngFor="let sport of (sports$ | async)" class="sport-container" [routerLink]="['/sport', sport.strSport]">
     <div>
       <div class="sport-image" [ngStyle]="{'background-image': 'url(' + sport.strSportThumb + ')'}">
       </div>
-      <a class="sport-title" [routerLink]="['/sport', sport.strSport]">
+      <div class="sport-title">
         <span class="sport-icon">
           <img [src]="getImageLink(sport.strSport)" alt="">
         </span>
         <span class="sport-name">
           {{sport.strSport}}
         </span>
-      </a>
+      </div>
     </div>
-  </div>
+  </a>
 </div>

@@ -13,6 +13,7 @@ export class SportComponent implements OnInit, OnDestroy {
 
   unsubscribe$ = new Subject();
   countries$: Observable<any>;
+  sportName: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,10 +32,13 @@ export class SportComponent implements OnInit, OnDestroy {
   getRouteParams(): void {
     this.route.params
       .pipe(
-        filter(params => params && params.name),
+        filter(params => params && params.sport),
         takeUntil(this.unsubscribe$)
       )
-      .subscribe(params => this.countries$ = this.sportsService.getSportByName(params.name));
+      .subscribe(params => {
+        this.sportName = params.sport;
+        this.countries$ = this.sportsService.getSportByName(this.sportName);
+      });
   }
 
 }

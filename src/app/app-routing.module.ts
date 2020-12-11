@@ -7,6 +7,9 @@ const routes: Routes = [
   },
   {
     path: 'sport', loadChildren: () => import('./sport/sport.module').then(m => m.SportModule)
+  },
+  {
+    path: '**', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
 ];
 

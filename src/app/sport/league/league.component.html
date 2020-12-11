@@ -1,0 +1,45 @@
+<div class="page-container">
+  <div *ngIf="(country$ | async) as country" class="country-container">
+    <div class="league-title flex-center-container">{{country.strLeague}}</div>
+    <div class="league-logo">
+      <img [src]="country.strBadge" alt="">
+    </div>
+    <div class="contry-name flex-center-container">
+      <mat-icon>public</mat-icon>{{country.strCountry}}
+    </div>
+    <div class="league-date flex-center-container">
+      <mat-icon>schedule</mat-icon>{{country.intFormedYear}}
+    </div>
+  </div>
+
+  <div class="league-event-container">
+    <mat-tab-group>
+      <mat-tab label="Last events">
+        <mat-accordion *ngIf="(events$ | async); else noData">
+          <mat-expansion-panel *ngFor="let event of (events$ | async)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{event.strEvent}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="event-venue">
+              <span>{{event.strVenue}}</span>
+              <span>{{event.strTimestamp | date}}</span>
+            </div>
+            <div class="event-description">
+              <a class="home-team-name">{{event.strHomeTeam}}</a>
+              <span>{{event.strStatus}}</span>
+              <a class="away-team-name">{{event.strAwayTeam}}</a>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-tab>
+      <mat-tab label="Description">Description</mat-tab>
+      <mat-tab label="Seasons">Seasons</mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<ng-template #noData>
+  No data found
+</ng-template>
