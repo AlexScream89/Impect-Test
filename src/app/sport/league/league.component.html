@@ -34,12 +34,22 @@
           </mat-expansion-panel>
         </mat-accordion>
       </mat-tab>
-      <mat-tab label="Description">Description</mat-tab>
-      <mat-tab label="Seasons">Seasons</mat-tab>
+      <mat-tab label="Description">
+        <div class="country-description">
+          {{(country$ | async)?.strDescriptionEN}}
+        </div>
+      </mat-tab>
+      <mat-tab label="Seasons">
+        <div *ngFor="let season of (seasons$ | async)" class="season-container">
+          {{season.strSeason}}
+        </div>
+      </mat-tab>
     </mat-tab-group>
   </div>
 </div>
 
 <ng-template #noData>
-  No data found
+  <div class="no-data-description">
+    No data found
+  </div>
 </ng-template>
