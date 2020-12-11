@@ -1,0 +1,11 @@
+.league-title {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  img {
+    width: 50px;
+    margin-right: 20px;
+  }
+}

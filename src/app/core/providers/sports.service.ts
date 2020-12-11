@@ -16,6 +16,7 @@ export class SportsService {
   }
 
   getSportByName(name: string) {
-    return this.http.get(`${environment.apiUrl}/search_all_leagues.php?s=${name}`);
+    return this.http.get(`${environment.apiUrl}/search_all_leagues.php?s=${name}`)
+      .pipe(pluck('countrys'));
   }
 }

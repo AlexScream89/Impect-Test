@@ -1,1 +1,13 @@
-<p>sport works!</p>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let country of (countries$ | async)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{country.strCountry}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <a class="league-title">
+      <img [src]="country.strBadge" alt="">
+      <span>{{country.strLeague}}</span>
+    </a>
+  </mat-expansion-panel>
+</mat-accordion>
